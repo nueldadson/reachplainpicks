@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Contact Plainpicks</title>
+    <style>
+        body{
+            font-family: 'Salsa', cursive;
+            background-image: url("https://live.staticflickr.com/65535/53415774103_14ecf6a6cd_c.jpg");
+            background-size: contain;
+            background-position: center;
+        }
+        .user{
+            background-image: url("https://live.staticflickr.com/65535/53415846294_e64065cd22_k.jpg");
+            background-size: contain;
+        }
+        body::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            min-height: 600px;
+            height: 100vh;
+            width: 100vw;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.174);
+        }
+        main{
+            z-index: 99;
+            background: rgba(255, 255, 255, 0.133);
+            border: 1px solid #fff;
+            /* background-color: blueviolet; */
+            box-shadow: 0 6px 0 rgba(29, 29, 29, 0.203);
+        }
+        #myDiv{
+            z-index: 999;
+        }
+        .mail{
+            box-shadow: 0px 5px 16px #874FEE;
+            z-index: 9999 !important;
+        }
+        /* Initial styles for the hidden element */
+        .hidden {
+            opacity: 0;
+            display: none;
+            transition: opacity 2s ease-in-out;
+        }
+    
+        /* Styles for the visible element */
+        .visible {
+            opacity: 1;
+            display: block;
+        }
+        
+        .typing-effect::after {
+            content: "|";
+            display: inline-block;
+            animation: blink-caret 0.75s infinite;
+            }
+
+            @keyframes blink-caret {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        .caption{
+            text-shadow: -2px 3px 0px #ffb621;
+        }
+        .name{
+            text-shadow: -5px 3px 0px #874FEE;
+        }
+    </style>
+</head>
+<body class="bg-red-500 w-full min-h-[600px] h-[100vh] flex justify-center items-center">
+    <main class=" flex flex-col rounded-2xl items-center lg:px-0 md:px-0 px-6 py-8 lg:w-[70vw] md:w-[80vw] w-[100vw] min-h-[500px] h-[90vh]">
+        <div class=" absolute top-5 right-5 h-[45px] bg-white w-[45px] flex justify-center items-center rounded-[100px] hover:bg-purple-400 hover:text-white text-xl transition-colors duration-300 font-bold showw1"><i class="fa-solid fa-ellipsis"></i></div>
+        <div class=" w-[130px] h-[130px] rounded-[100px] bg-blue-500 mb-4 user"></div>
+        <h3 id="typingText" class="text-3xl text-center font-bold mb-2 text-white tracking-widest typing-effect name">PlainPicks Online Store</h3>
+        <h3 class="text-xl text-center font-bold tracking-wide text-white mb-4 caption ">Simple style. Exceptional choices</h3>
+        <div class="w-full pt-6 pb-6 lg:px-8">
+            <div class="flex items-center justify-between h-[60px] w-full bg-[#FFB621] hover:bg-transparent transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#874FEE] hover:border-4 text-[#874FEE] tracking-widest rounded-[50px] p-2 triggerElement mb-6">
+                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black">f</div>
+                <div class="font-bold targetElement">Instagram</div>
+                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#FFB621] hover:text-white text-xl transition-colors duration-300 font-bold showw2"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+            <div class="flex items-center justify-between h-[60px] w-full bg-[#874FEE] hover:bg-transparent transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
+                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black">f</div>
+                <div class="font-bold targetElement12">Whatsapp</div>
+                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#874FEE] hover:text-white text-xl transition-colors duration-300 font-bold showw3"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+        </div>
+    </main>
+<div id="myDiv" class="hidden">
+        <div class="fixed top-0 left-0 w-full h-full bg-white opacity-50 z-50" id="myDivv"></div>
+        
+        <!-- Centered Popup Box -->
+        <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 min-w-[300px] rounded-[30px] shadow-md z-50">
+            <h1 class="text-xl font-bold mb-4 w-full flex justify-center items-center">Share PlainPicks</h1>
+            <button id="shareButton" class="w-full px-4 py-2 mb-4 font-bold bg-[#FFB621] rounded hover:transform hover:scale-110 transition-transform duration-300"> <i class="fa-solid fa-share-nodes"></i>&nbsp;&nbsp;Share Link</button>
+            <div class="flex h-[50px]">
+                <textarea id="textArea" class="mt-1 p-0 w-full h-[] text-sm overflow-hidden border border-gray-300 rounded focus:outline-none" readonly >https://reachplainpicks.vercel.app/</textarea>    
+                <button id="copyButton"
+                class="ml-4 hover:bg-blue-600 bg-blue-500 h-full text-white px-4 py-2 rounded focus:outline-none focus:ring focus:border-blue-300 hover:scale-110 transition-transform duration-300 ">
+                Copy
+            </button>
+        </div>
+        <button class="mt-4 bg-[#874FEE] w-full text-white px-4 py-2 rounded hover:scale-110 transition-transform duration-300 fadeButton">Close</button>
+    </div>
+</div>
+
+<div class="webBtn absolute px-12 tracking-widest mail py-4 rounded-[50px] hover:scale-110 transition-colors-transform duration-300 text-sm text-white font-bold bg-[#FFB621] bottom-10">
+    Send Us a Mail <i class="fa-solid fa-envelopes-bulk"></i>
+</div>
+
+    <script>
+
+         document.addEventListener("DOMContentLoaded", function () {
+                const textElement = document.getElementById("typingText");
+                const textToType = "PlainPicks Online Store";
+                let index = 0;
+
+                function typeText() {
+                    textElement.textContent = textToType.slice(0, index);
+                    index++;
+
+                    if (index <= textToType.length) {
+                        setTimeout(typeText, 100);
+                    } else {
+                        // Typing animation is complete, hide the cursor
+                        textElement.classList.remove("typing-effect");
+                    }
+                }
+
+                typeText();
+            });
+
+
+         const triggerElement = document.querySelector('.triggerElement');
+         const triggerElement2 = document.querySelector('.triggerElement2');
+            const targetElement = document.querySelector('.targetElement');
+            const targetElement12 = document.querySelector('.targetElement12');
+            const targetElement2 = document.querySelector('.showw2');
+            const targetElement3 = document.querySelector('.showw3');
+
+            triggerElement.addEventListener('mouseenter', () => {
+                targetElement.classList.add('text-white');
+                targetElement2.classList.add('text-white');
+            });
+            
+            triggerElement2.addEventListener('mouseenter', () => {
+                targetElement12.classList.add('text-white');
+                targetElement3.classList.add('text-white');
+            });
+
+            triggerElement.addEventListener('mouseleave', () => {
+                targetElement.classList.remove('text-white');
+                targetElement2.classList.remove('text-white');
+            });
+            
+            triggerElement2.addEventListener('mouseleave', () => {
+                targetElement12.classList.remove('text-white');
+                targetElement3.classList.remove('text-white');
+            });
+            // triggerElement.addEventListener('mouseeenter', () => {
+            //     targetElement2.classList.add('text-white');
+            // });
+
+            // triggerElement.addEventListener('mouseleave', () => {
+            //     targetElement2.classList.remove('bg-red-500');
+            // });
+
+
+
+        const shareButton = document.getElementById('shareButton');
+
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'https://reachplainpicks.vercel.app/',
+                        text: 'Share To',
+                        url: 'https://reachplainpicks.vercel.app/', // Replace with your actual URL
+                    });
+                    console.log('Link shared successfully!');
+                } catch (error) {
+                    console.error('Error sharing link:', error.message);
+                }
+            });
+        } else {
+            shareButton.disabled = true;
+            console.warn('Web Share API not supported on this browser.');
+        }
+
+
+
+
+        const textArea = document.getElementById('textArea');
+            const copyButton = document.getElementById('copyButton');
+
+            copyButton.addEventListener('click', () => {
+                textArea.select();
+                document.execCommand('copy');
+                // Optionally, provide feedback to the user that the text has been copied
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy';
+                }, 1000);
+            });
+
+
+            
+
+            const fadeButton = document.querySelector('.fadeButton');
+            const toggleButton = document.querySelector('.showw1');
+            const toggleButton2 = document.querySelector('.showw2');
+            const toggleButton3 = document.querySelector('.showw3');
+            const myDiv = document.getElementById('myDiv');
+            const myDivv = document.getElementById('myDivv');
+
+            fadeButton.addEventListener('click', () => {
+                    // Add the 'visible' class to fade up the element
+                    myDiv.classList.remove('visible');
+                    myDiv.classList.add('hidden');
+                });
+                
+                toggleButton.addEventListener('click', () => {
+                    // Toggle the 'visible' class to toggle visibility
+                    myDiv.classList.remove('hidden');
+                    myDiv.classList.add('visible');
+                });
+                toggleButton2.addEventListener('click', () => {
+                    // Toggle the 'visible' class to toggle visibility
+                    myDiv.classList.remove('hidden');
+                    myDiv.classList.add('visible');
+                });
+                toggleButton3.addEventListener('click', () => {
+                    // Toggle the 'visible' class to toggle visibility
+                    myDiv.classList.remove('hidden');
+                    myDiv.classList.add('visible');
+                });
+                myDivv.addEventListener('click', () => {
+                    // Toggle the 'visible' class to toggle visibility
+                    myDiv.classList.remove('visible');
+                    myDiv.classList.add('hidden');
+                });
+    </script>
+</body>
+</html>
