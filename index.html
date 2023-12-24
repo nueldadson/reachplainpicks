@@ -14,13 +14,14 @@
     <style>
         body{
             font-family: 'Salsa', cursive;
-            background-image: url("https://live.staticflickr.com/65535/53415774103_14ecf6a6cd_c.jpg");
-            background-size: contain;
+            background-image: url("https://live.staticflickr.com/65535/53418810498_eebc546e78_k.jpg");
+            background-size: cover;
             background-position: center;
         }
         .user{
             background-image: url("https://live.staticflickr.com/65535/53415846294_e64065cd22_k.jpg");
             background-size: contain;
+            box-shadow: 0 6px 6px #874FEE;
         }
         body::after {
             position: absolute;
@@ -30,12 +31,12 @@
             min-height: 600px;
             height: 100vh;
             width: 100vw;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(5px);
             background: rgba(255, 255, 255, 0.174);
         }
         main{
             z-index: 99;
-            background: rgba(255, 255, 255, 0.133);
+            background: rgba(33, 33, 33, 0.133);
             border: 1px solid #fff;
             /* background-color: blueviolet; */
             box-shadow: 0 6px 0 rgba(29, 29, 29, 0.203);
@@ -44,7 +45,7 @@
             z-index: 999;
         }
         .mail{
-            box-shadow: 0px 5px 16px #874FEE;
+            box-shadow: 0px 5px 20px black;
             z-index: 9999 !important;
         }
         /* Initial styles for the hidden element */
@@ -75,27 +76,27 @@
             }
         }
         .caption{
-            text-shadow: -2px 3px 0px #ffb621;
+            text-shadow: -2px 3px 0px black;
         }
         .name{
-            text-shadow: -5px 3px 0px #874FEE;
+            text-shadow: -5px 3px 0px white;
         }
     </style>
 </head>
-<body class="bg-red-500 w-full min-h-[600px] h-[100vh] flex justify-center items-center">
+<body class=" w-full min-h-[600px] h-[100vh] flex justify-center items-center">
     <main class=" flex flex-col rounded-2xl items-center lg:px-0 md:px-0 px-6 py-8 lg:w-[70vw] md:w-[80vw] w-[100vw] min-h-[500px] h-[90vh]">
         <div class=" absolute top-5 right-5 h-[45px] bg-white w-[45px] flex justify-center items-center rounded-[100px] hover:bg-purple-400 hover:text-white text-xl transition-colors duration-300 font-bold showw1"><i class="fa-solid fa-ellipsis"></i></div>
         <div class=" w-[130px] h-[130px] rounded-[100px] bg-blue-500 mb-4 user"></div>
-        <h3 id="typingText" class="text-3xl text-center font-bold mb-2 text-white tracking-widest typing-effect name">PlainPicks Online Store</h3>
-        <h3 class="text-xl text-center font-bold tracking-wide text-white mb-4 caption ">Simple style. Exceptional choices</h3>
+        <h3 id="typingText" class="text-3xl text-center font-bold mb-2 text-[#874FEE] tracking-widest typing-effect name">PlainPicks Online Store</h3>
+        <h3 class="text-xl text-center font-bold tracking-wide text-[#FFB621] mb-4 caption ">Simple style. Exceptional choices</h3>
         <div class="w-full pt-6 pb-6 lg:px-8">
-            <div class="flex items-center justify-between h-[60px] w-full bg-[#FFB621] hover:bg-transparent transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#874FEE] hover:border-4 text-[#874FEE] tracking-widest rounded-[50px] p-2 triggerElement mb-6">
-                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black">f</div>
+            <div class="flex items-center justify-between h-[60px] w-full bg-white hover:bg-[#874FEE] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#874FEE] hover:border-4 text-[#874FEE] tracking-widest rounded-[50px] p-2 triggerElement mb-6">
+                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black border border-4 border-solid border-[#874FEE] linkIcon">f</div>
                 <div class="font-bold targetElement">Instagram</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#FFB621] hover:text-white text-xl transition-colors duration-300 font-bold showw2"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
-            <div class="flex items-center justify-between h-[60px] w-full bg-[#874FEE] hover:bg-transparent transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
-                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black">f</div>
+            <div class="flex items-center justify-between h-[60px] w-full bg-black hover:bg-[#FFB621] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
+                <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black  border border-4 border-solid border-[#FFB621] linkIcon2">f</div>
                 <div class="font-bold targetElement12">Whatsapp</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#874FEE] hover:text-white text-xl transition-colors duration-300 font-bold showw3"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
@@ -119,7 +120,7 @@
     </div>
 </div>
 
-<div class="webBtn absolute px-12 tracking-widest mail py-4 rounded-[50px] hover:scale-110 transition-colors-transform duration-300 text-sm text-white font-bold bg-[#FFB621] bottom-10">
+<div class="webBtn absolute px-12 tracking-widest mail py-4 rounded-[50px] hover:scale-110 transition-colors-transform duration-300 text-sm text-black font-bold bg-white bottom-10">
     Send Us a Mail <i class="fa-solid fa-envelopes-bulk"></i>
 </div>
 
@@ -152,25 +153,31 @@
             const targetElement12 = document.querySelector('.targetElement12');
             const targetElement2 = document.querySelector('.showw2');
             const targetElement3 = document.querySelector('.showw3');
+            const targetElement31 = document.querySelector('.linkIcon');
+            const targetElement32 = document.querySelector('.linkIcon2');
 
             triggerElement.addEventListener('mouseenter', () => {
                 targetElement.classList.add('text-white');
                 targetElement2.classList.add('text-white');
+                targetElement31.classList.add('border-white');
             });
             
             triggerElement2.addEventListener('mouseenter', () => {
                 targetElement12.classList.add('text-white');
                 targetElement3.classList.add('text-white');
+                targetElement32.classList.add('border-white');
             });
 
             triggerElement.addEventListener('mouseleave', () => {
                 targetElement.classList.remove('text-white');
                 targetElement2.classList.remove('text-white');
+                targetElement31.classList.remove('border-white');
             });
             
             triggerElement2.addEventListener('mouseleave', () => {
                 targetElement12.classList.remove('text-white');
                 targetElement3.classList.remove('text-white');
+                targetElement32.classList.remove('border-white');
             });
             // triggerElement.addEventListener('mouseeenter', () => {
             //     targetElement2.classList.add('text-white');
@@ -189,7 +196,7 @@
                 try {
                     await navigator.share({
                         title: 'https://reachplainpicks.vercel.app/',
-                        text: 'Share To',
+                        text: 'Contact Us',
                         url: 'https://reachplainpicks.vercel.app/', // Replace with your actual URL
                     });
                     console.log('Link shared successfully!');
