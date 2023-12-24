@@ -17,6 +17,8 @@
             background-image: url("https://live.staticflickr.com/65535/53418810498_eebc546e78_k.jpg");
             background-size: cover;
             background-position: center;
+                  height: calc(100vh - var(--nav-height, 0px));
+
         }
         .user{
             background-image: url("https://live.staticflickr.com/65535/53415846294_e64065cd22_k.jpg");
@@ -29,7 +31,7 @@
             top: 0;
             left: 0;
             min-height: 600px;
-            height: 100vh;
+            height: inherit;
             width: 100vw;
             backdrop-filter: blur(5px);
             background: rgba(255, 255, 255, 0.174);
@@ -125,6 +127,15 @@
 </div>
 
     <script>
+
+
+        // Get the height of the browser's navigation panel dynamically
+            const navHeight = window.innerHeight - document.documentElement.clientHeight;
+
+            // Set a CSS variable with the navigation panel height
+            document.documentElement.style.setProperty('--nav-height', `${navHeight}px`);
+
+
 
          document.addEventListener("DOMContentLoaded", function () {
                 const textElement = document.getElementById("typingText");
