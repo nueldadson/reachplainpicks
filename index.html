@@ -92,9 +92,9 @@
         <h3 id="typingText" class="text-3xl text-center font-bold mb-2 text-[#874FEE] tracking-widest typing-effect name">PlainPicks Online Store</h3>
         <h3 class="text-xl text-center font-bold tracking-wide text-[#FFB621] mb-4 caption ">Simple style. Exceptional choices</h3>
         <div class="w-full pt-6 pb-6 lg:px-8">
-            <div class="flex items-center justify-between h-[60px] w-full bg-white hover:bg-[#874FEE] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#874FEE] hover:border-4 text-[#874FEE] tracking-widest rounded-[50px] p-2 triggerElement mb-6">
+            <div onclick="handleClick()" class="flex items-center justify-between h-[60px] w-full bg-white hover:bg-[#874FEE] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#874FEE] hover:border-4 text-[#874FEE] tracking-widest rounded-[50px] p-2 triggerElement mb-6">
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black border border-4 border-solid border-[#874FEE] linkIcon">f</div>
-                <div class="font-bold targetElement">Instagram</div>
+                <div class="font-bold targetElement" id="ig">Instagram</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#FFB621] hover:text-white text-xl transition-colors duration-300 font-bold showw2"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
             <div class="flex items-center justify-between h-[60px] w-full bg-black hover:bg-[#FFB621] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
@@ -197,6 +197,40 @@
             // triggerElement.addEventListener('mouseleave', () => {
             //     targetElement2.classList.remove('bg-red-500');
             // });
+
+
+
+             function handleClick() {
+                    // Get the element by its ID
+                    var clickElement = document.getElementById('ig');
+
+                    // Set initial text to an empty string
+                    clickElement.textContent = "";
+
+                    // Define the text for the typing effect
+                    var typingText = "Redirecting...";
+
+                    // Function to simulate typing effect
+                    function typeText(index) {
+                        if (index <= typingText.length) {
+                            // Display a portion of the typingText
+                            clickElement.textContent = typingText.slice(0, index);
+
+                            // Call the function again after a short delay
+                            setTimeout(function () {
+                                typeText(index + 1);
+                            }, 100); // Adjust the delay as needed
+                        } else {
+                            // Redirect after typing effect is complete
+                            setTimeout(function () {
+                                window.location.href = "https://www.instagram.com/plainpickss?igsh=NXpwNHB1ZXhpZXc4"; // Replace with your desired URL
+                            }, 300); // Adjust the delay before redirecting
+                        }
+                    }
+
+                    // Start the typing effect
+                    typeText(0);
+                }
 
 
 
