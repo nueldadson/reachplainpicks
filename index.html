@@ -209,13 +209,13 @@
 
                     // Define the text for the typing effect
                     var typingText = "Redirecting...";
-
+                    
                     // Function to simulate typing effect
                     function typeText(index) {
                         if (index <= typingText.length) {
                             // Display a portion of the typingText
                             clickElement.textContent = typingText.slice(0, index);
-
+                            
                             // Call the function again after a short delay
                             setTimeout(function () {
                                 typeText(index + 1);
@@ -223,7 +223,43 @@
                         } else {
                             // Redirect after typing effect is complete
                             setTimeout(function () {
+                                var typingText = "dd";
                                 window.location.href = "https://www.instagram.com/plainpickss?igsh=NXpwNHB1ZXhpZXc4"; // Replace with your desired URL
+                            }, 300); // Adjust the delay before redirecting
+                        }
+                    }
+
+                    // Start the typing effect
+                    typeText(0);
+                }
+
+
+            
+                function handleClick2() {
+                    // Get the element by its ID
+                    var clickElement = document.getElementById('ig');
+
+                    // Set initial text to an empty string
+                    clickElement.textContent = "";
+
+                    // Define the text for the typing effect
+                    var typingText = "Redirecting...";
+                    
+                    // Function to simulate typing effect
+                    function typeText(index) {
+                        if (index <= typingText.length) {
+                            // Display a portion of the typingText
+                            clickElement.textContent = typingText.slice(0, index);
+                            
+                            // Call the function again after a short delay
+                            setTimeout(function () {
+                                typeText(index + 1);
+                            }, 100); // Adjust the delay as needed
+                        } else {
+                            // Redirect after typing effect is complete
+                            // var typingText = "Instagram";
+                            setTimeout(function () {
+                                window.location.href = "https://api.whatsapp.com/send?phone=2348146522772&text=Hello"; // Replace with your desired URL
                             }, 300); // Adjust the delay before redirecting
                         }
                     }
