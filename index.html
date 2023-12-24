@@ -99,7 +99,7 @@
             </div>
             <div class="flex items-center justify-between h-[60px] w-full bg-black hover:bg-[#FFB621] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black  border border-4 border-solid border-[#FFB621] linkIcon2">f</div>
-                <div class="font-bold targetElement12" id="whatsapp">Whatsapp</div>
+                <div class="font-bold targetElement12" id="whatsapp" onclick="handleClick2()">Whatsapp</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#874FEE] hover:text-white text-xl transition-colors duration-300 font-bold showw3"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
         </div>
@@ -122,7 +122,7 @@
     </div>
 </div>
 
-<div class="webBtn absolute px-12 tracking-widest mail py-4 rounded-[50px] hover:scale-110 transition-colors-transform duration-300 text-sm text-black font-bold bg-white bottom-10">
+<div class="webBtn absolute px-12 tracking-widest mail py-4 rounded-[50px] hover:scale-110 transition-colors-transform duration-300 text-sm text-black font-bold bg-white bottom-10 hover:cursor-pointer" onclick="sendEmail()">
     Send Us a Mail <i class="fa-solid fa-envelopes-bulk"></i>
 </div>
 
@@ -272,7 +272,10 @@
 
 
             
-
+    function sendEmail() {
+        // You can replace 'your-email@example.com' with the actual email address
+        window.location.href = 'mailto:shopplainpicks@gmail.com';
+    }
 
 
         const shareButton = document.getElementById('shareButton');
