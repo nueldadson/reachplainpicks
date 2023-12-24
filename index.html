@@ -17,7 +17,7 @@
             background-image: url("https://live.staticflickr.com/65535/53418810498_eebc546e78_k.jpg");
             background-size: cover;
             background-position: center;
-                  height: calc(100vh - var(--nav-height, 0px));
+                  height: 100vh;
 
         }
         .user{
@@ -83,9 +83,13 @@
         .name{
             text-shadow: -5px 3px 0px white;
         }
+        .mailform{
+            z-index: 9999999 !important ;
+            /* display: none; */
+        }
     </style>
 </head>
-<body class=" w-full min-h-[600px] h-[100vh] flex justify-center items-center">
+<bod class=" w-full min-h-[600px] h-[100vh] flex justify-center items-center">
     <main class=" flex flex-col rounded-2xl items-center lg:px-0 md:px-0 px-6 py-8 lg:w-[70vw] md:w-[80vw] w-[100vw] min-h-[500px] h-[90vh]">
         <div class=" absolute top-5 right-5 h-[45px] bg-white w-[45px] flex justify-center items-center rounded-[100px] hover:bg-purple-400 hover:text-white text-xl transition-colors duration-300 font-bold showw1"><i class="fa-solid fa-ellipsis"></i></div>
         <div class=" w-[130px] h-[130px] rounded-[100px] bg-blue-500 mb-4 user"></div>
@@ -97,9 +101,9 @@
                 <div class="font-bold targetElement" id="ig">Instagram</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#FFB621] hover:text-white text-xl transition-colors duration-300 font-bold showw2"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
-            <div class="flex items-center justify-between h-[60px] w-full bg-black hover:bg-[#FFB621] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
+            <div  onclick="handleClick2()"" class="flex items-center justify-between h-[60px] w-full bg-black hover:bg-[#FFB621] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black  border border-4 border-solid border-[#FFB621] linkIcon2">f</div>
-                <div class="font-bold targetElement12" id="whatsapp" onclick="handleClick2()">Whatsapp</div>
+                <div class="font-bold targetElement12" id="whatsapp">Whatsapp</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#874FEE] hover:text-white text-xl transition-colors duration-300 font-bold showw3"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
         </div>
@@ -122,18 +126,33 @@
     </div>
 </div>
 
-<div class="webBtn absolute px-12 tracking-widest mail py-4 rounded-[50px] hover:scale-110 transition-colors-transform duration-300 text-sm text-black font-bold bg-white bottom-10 hover:cursor-pointer" onclick="sendEmail()">
-    Send Us a Mail <i class="fa-solid fa-envelopes-bulk"></i>
+<div class="mailform hidden">
+<div class="top-0 left-0 w-full h-full bg-white fixed mailbag opacity-50"></div>
+        <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 min-w-[300px] rounded-[30px] shadow-md ">
+            <h1 class="text-xl font-bold mb-4 w-full flex justify-center items-center">Mail details</h1>
+            <!-- <form action="https://formspree.io/f/meqyjdjd" name="simple-contact-form" accept-charset="utf-8" method="POST" class="flex flex-col"> -->
+            <form id="simple-contact-form"  accept-charset="utf-8" class="flex flex-col">
+                <label for="email-address">Email Address</label>
+                <input type="email" name="_replyto" id="email-address" placeholder="Enter Your Mail" class="border border-solid border-4 rounded-lg p-2 border-[#874FEE]" required>
+                <label for="message">Message</label>
+                    <textarea rows="3" name="message" id="message"
+                        placeholder="Mail Content"
+                        class="border border-solid border-4 rounded-lg p-2 border-[#874FEE]"
+                        required=""></textarea>
+                    <input type="hidden" name="_subject" id="email-subject"  value="Contact Form Submission">
+                    <button onclick="submitForm()" type="button" class="mt-4 bg-[#FFB621] w-full text-white px-4 py-2 rounded hover:scale-110 transition-transform duration-300" >Submit</button>
+                    <!-- <input type="submit" class="mt-4 bg-[#FFB621] w-full text-white px-4 py-2 rounded hover:scale-110 transition-transform duration-300" value="Submit"> -->
+                </form>
+                <button class="mt-4 bg-[#874FEE] w-full text-white px-4 py-2 rounded hover:scale-110 transition-transform duration-300 closemail">Close</button>
 </div>
+</div>
+    <button onclick="showmail()" class="absolute bottom-10 webBtn px-12 tracking-widest mail py-4 rounded-[50px] hover:scale-110 transition-colors-transform duration-300 text-sm text-black font-bold bg-white  hover:cursor-pointer" id="mail">
+     Send us a mail<i class="fa-solid fa-envelopes-bulk"></i>
+    </button>
 
     <script>
 
 
-        // Get the height of the browser's navigation panel dynamically
-            const navHeight = window.innerHeight - document.documentElement.clientHeight;
-
-            // Set a CSS variable with the navigation panel height
-            document.documentElement.style.setProperty('--nav-height', `${navHeight}px`);
 
 
 
@@ -268,14 +287,7 @@
 
                     // Start the typing effect
                     typeText(0);
-                }
-
-
-            
-    function sendEmail() {
-        // You can replace 'your-email@example.com' with the actual email address
-        window.location.href = 'mailto:shopplainpicks@gmail.com';
-    }
+                };
 
 
         const shareButton = document.getElementById('shareButton');
@@ -323,11 +335,33 @@
             const toggleButton3 = document.querySelector('.showw3');
             const myDiv = document.getElementById('myDiv');
             const myDivv = document.getElementById('myDivv');
+            const mailform = document.querySelector('.mailform');
+            const mail = document.querySelector('.mail');
+            const mailbag = document.querySelector('.mailbag');
+            const closemail = document.querySelector('.closemail');
 
             fadeButton.addEventListener('click', () => {
                     // Add the 'visible' class to fade up the element
                     myDiv.classList.remove('visible');
                     myDiv.classList.add('hidden');
+                });
+
+            closemail.addEventListener('click', () => {
+                    // Add the 'visible' class to fade up the element
+                    mailform.classList.remove('visible');
+                    mailform.classList.add('hidden');
+                });
+                
+            mail.addEventListener('click', () => {
+                    // Add the 'visible' class to fade up the element
+                    mailform.classList.remove('hidden');
+                    mailform.classList.add('visible');
+                });
+                
+            mailbag.addEventListener('click', () => {
+                    // Add the 'visible' class to fade up the element
+                    mailform.classList.remove('visible');
+                    mailform.classList.add('hidden');
                 });
                 
                 toggleButton.addEventListener('click', () => {
@@ -350,6 +384,34 @@
                     myDiv.classList.remove('visible');
                     myDiv.classList.add('hidden');
                 });
-    </script>
+
+
+                    function submitForm() {
+                            // Get form data
+                            var formData = new FormData(document.getElementById('simple-contact-form'));
+
+                            // Send form data using Fetch API
+                            fetch('https://formspree.io/f/meqyjdjd', {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    // Handle the response if needed
+                                    console.log(data);
+                                    alert('Form submitted successfully!');
+                                    mailform.classList.remove('visible');
+                                    mailform.classList.add('hidden');
+                                })
+                                .catch(error => {
+                                    // Handle errors if any
+                                    console.error('Error:', error);
+                                    alert('An error occurred while submitting the form.');
+                                });
+                            }
+                            </script>
 </body>
 </html>
