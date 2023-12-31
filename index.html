@@ -3,45 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Contact Plainpicks</title>
     <style>
         body{
-            font-family: 'Salsa', cursive;
-            background-image: url("https://live.staticflickr.com/65535/53418810498_eebc546e78_k.jpg");
+            font-family: 'Archivo', sans-serif;
+            background-image: url("https://live.staticflickr.com/65535/53432944116_1159780b7a_k.jpg");
             background-size: cover;
             background-position: center;
-                  height: 100vh;
-
+            height: 100vh;
         }
         .user{
             background-image: url("https://live.staticflickr.com/65535/53415846294_e64065cd22_k.jpg");
             background-size: contain;
-            box-shadow: 0 6px 6px #874FEE;
+            /* box-shadow: 0 6px 6px #874FEE; */
+            /* border: 7px solid #7c838a; */
+            border: 7px solid #fffff3;
+            /* border: 7px solid white; */
         }
         body::after {
             position: absolute;
             content: "";
             top: 0;
             left: 0;
-            min-height: 600px;
-            height: inherit;
+            /* min-height: 100vh; */
+            height: 100vh;
             width: 100vw;
-            backdrop-filter: blur(5px);
-            background: rgba(255, 255, 255, 0.174);
+            backdrop-filter: blur(100px);
+            background: rgba(255, 255, 255, 0.05);
         }
         main{
             z-index: 99;
-            background: rgba(33, 33, 33, 0.133);
-            border: 1px solid #fff;
+            /* background: rgba(251, 217, 0, 0.133); */
+            /* position: relative; */
+            /* border: 5px solid; */
+            /* border-image: linear-gradient(to bottom, #FFB621, #874FEE);
+            border-image-slice: 1; */
+            /* border-radius: 100px !important; */
+            width: 100vw;
+            height: 100vh;
             /* background-color: blueviolet; */
             box-shadow: 0 6px 0 rgba(29, 29, 29, 0.203);
+
         }
         #myDiv{
             z-index: 999;
@@ -77,12 +88,6 @@
                 opacity: 1;
             }
         }
-        .caption{
-            text-shadow: -2px 3px 0px black;
-        }
-        .name{
-            text-shadow: -5px 3px 0px white;
-        }
         .mailform{
             z-index: 9999999 !important ;
             /* display: none; */
@@ -90,18 +95,24 @@
     </style>
 </head>
 <bod class=" w-full min-h-[600px] h-[100vh] flex justify-center items-center">
-    <main class=" flex flex-col rounded-2xl items-center lg:px-0 md:px-0 px-6 py-8 lg:w-[70vw] md:w-[80vw] w-[100vw] min-h-[500px] h-[90vh]">
+    <main class=" flex flex-col items-center lg:px-0 md:px-0 px-6 py-8 ">
         <div class=" absolute top-5 right-5 h-[45px] bg-white w-[45px] flex justify-center items-center rounded-[100px] hover:bg-purple-400 hover:text-white text-xl transition-colors duration-300 font-bold showw1"><i class="fa-solid fa-ellipsis"></i></div>
-        <div class=" w-[130px] h-[130px] rounded-[100px] bg-blue-500 mb-4 user"></div>
-        <h3 id="typingText" class="text-3xl text-center font-bold mb-2 text-[#874FEE] tracking-widest typing-effect name">PlainPicks Online Store</h3>
-        <h3 class="text-xl text-center font-bold tracking-wide text-[#FFB621] mb-4 caption ">Simple style. Exceptional choices</h3>
+        <div class=" w-[135px] h-[135px] rounded-[100px] bg-blue-500 mb-4 mt-6 user"></div>
+        <h3 id="typingText" class="text-3xl text-center font-bold text-white tracking-widest typing-effect name">PlainPicks Online Store</h3>
+        <h3 class="text-lg text-center font-bold tracking-wide text-white mb-8 caption ">Simple style. Exceptional choices</h3>
+        <div class="social-icons flex justify-between w-[190px] mb-4 text-3xl text-[#874FEE]">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-tiktok"></i>
+            <i class="fa-solid fa-shop"></i>
+        </div>
         <div class="w-full pt-6 pb-6 lg:px-8">
-            <div onclick="handleClick()" class="flex items-center justify-between h-[60px] w-full bg-white hover:bg-[#874FEE] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#874FEE] hover:border-4 text-[#874FEE] tracking-widest rounded-[50px] p-2 triggerElement mb-6">
+            <div onclick="handleClick()" class="flex items-center justify-between h-[60px] w-full bg-[#fffff3] hover:bg-[#874FEE] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#874FEE] hover:border-4 text-[#874FEE] tracking-widest rounded-[15px] p-2 triggerElement mb-6">
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black border border-4 border-solid border-[#874FEE] linkIcon">f</div>
                 <div class="font-bold targetElement" id="ig">Instagram</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#FFB621] hover:text-white text-xl transition-colors duration-300 font-bold showw2"><i class="fa-solid fa-ellipsis"></i></div>
             </div>
-            <div  onclick="handleClick2()"" class="flex items-center justify-between h-[60px] w-full bg-black hover:bg-[#FFB621] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[50px] p-2 triggerElement2 mb-6">
+            <div  onclick="handleClick2()"" class="flex items-center justify-between h-[60px] w-full bg-[#fffff3] hover:bg-[#FFB621] transition-colors-transform duration-500 hover:border hover:border-solid hover:border-[#FFB621] hover:border-4 text-[#FFB621] tracking-widest rounded-[15px] p-2 triggerElement2 mb-6">
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] bg-black  border border-4 border-solid border-[#FFB621] linkIcon2">f</div>
                 <div class="font-bold targetElement12" id="whatsapp">Whatsapp</div>
                 <div class="h-full w-[45px] flex justify-center items-center rounded-[100px] hover:bg-[#874FEE] hover:text-white text-xl transition-colors duration-300 font-bold showw3"><i class="fa-solid fa-ellipsis"></i></div>
@@ -371,11 +382,13 @@
                 });
                 toggleButton2.addEventListener('click', () => {
                     // Toggle the 'visible' class to toggle visibility
+                    event.stopPropagation();
                     myDiv.classList.remove('hidden');
                     myDiv.classList.add('visible');
                 });
                 toggleButton3.addEventListener('click', () => {
                     // Toggle the 'visible' class to toggle visibility
+                    event.stopPropagation();
                     myDiv.classList.remove('hidden');
                     myDiv.classList.add('visible');
                 });
